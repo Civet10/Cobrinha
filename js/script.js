@@ -9,7 +9,7 @@ const buttonPlay = document.querySelector(".btn-play")
 
 //ctx.fillStyle = "red"
 //ctx.fillRect(300, 300, 30, 30)
-//const audio = new Audio((''))
+const audio = new Audio('./assets/audio.mp3')
 
 const size = 30
 const initialPosition = {x: 270, y: 240}
@@ -121,7 +121,7 @@ const checkEat = () => {
     if (head.x == food.x && head.y == food.y) {
         incrementScore()
         snake.push(head)
-        //audio.play()
+        audio.play()
 
         let x = randomPosition()
         let y = randomPosition()
