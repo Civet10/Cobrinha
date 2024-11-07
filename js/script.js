@@ -5,7 +5,8 @@ const score = document.querySelector(".score--value")
 const finalScore = document.querySelector(".final-score > span")
 const menu = document.querySelector(".menu-screen")
 const buttonPlay = document.querySelector(".btn-play")
-
+const difficultySelector = document.getElementById("difficulty");
+let speed = 220; // velocidade padrão para "Moderado"
 
 //ctx.fillStyle = "red"
 //ctx.fillRect(300, 300, 30, 30)
@@ -159,6 +160,8 @@ const gameOver = () => {
     finalScore.innerText = score.innerText
     canvas.style.filter = "blur(4px)"
 }
+///////////////////////////////////////////////
+///////////////////////////////////////////////
 
 const gameLoop = () => {
     clearInterval(loopId)
@@ -176,7 +179,7 @@ const gameLoop = () => {
 
     loopId = setTimeout(() => {
         gameLoop()
-    }, 300)
+    }, speed)
 }
 //setInterval(() => {}, 300)
 gameLoop()
@@ -202,4 +205,12 @@ buttonPlay.addEventListener("click", () => {
     menu.style.display = "none"
     canvas.style.filter = "none"
     snake = [initialPosition]
+    const difficulty = difficultySelector.value;
+if (difficulty === "easy") {
+    speed = 300; // Fácil
+} else if (difficulty === "hard") {
+    speed = 150; // Difícil
+} else {
+    speed = 220; // Moderado (padrão)
+}
 })
