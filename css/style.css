@@ -67,4 +67,14 @@ canvas {background-color: #111;}
     gap: 5px;
     cursor: pointer;
 }
+.menu-screen label, .menu-screen select {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.menu-screen select {
+    padding: 5px;
+}
+
 
